@@ -1,0 +1,10 @@
+**/.DS_Store
+*.iml
+/.idea/
+/.mvn/
+mvnw
+mvnw.cmd
+/target/
+/venv/
+**/target/
+**/build/
