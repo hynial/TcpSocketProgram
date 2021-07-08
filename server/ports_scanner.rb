@@ -1,6 +1,6 @@
 require 'socket'
 
-PORT_RANGE = 1..128
+PORT_RANGE = 20..444
 HOST = 'hynial.cn'
 TIME_TO_WAIT = 5
 
@@ -15,7 +15,9 @@ sockets = PORT_RANGE.map do |port|
     socket
 end
 
+puts "from:#{Time.now}"
 expiration = Time.now + TIME_TO_WAIT
+puts "end:#{expiration}"
 
 loop do
     _, writable, _ = IO.select(nil, sockets, nil, expiration - Time.now)
@@ -32,3 +34,6 @@ loop do
         end
     end
 end
+
+
+# https://github.com/tarcieri/nio4r
